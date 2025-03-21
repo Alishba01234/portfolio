@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.navbar {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;  /* Adjusting to space-between */
+    align-items: center;
+    color: white;
+    background-color: black;
+    position: fixed;
+    z-index: 2000;
+}
+
+.myName {
+    font-size: 2rem;
+    transition: transform 0.5s ease-in-out; /* Only transform the element */
+}
+
+.alishba {
+    color: rgb(202, 192, 192); /* Purplish color for Alishba */
+    font-weight: 550;
+    text-shadow: 5px 3px 6px #bb51db; /* Purplish shading for "Alishba" */
+}
+
+.jawaid {
+    color: #6A0DAD;
+    font-weight: bolder;
+    text-shadow: 3px 3px 6px rgb(190, 181, 181); /* Greyish shading for "Jawaid" */
+}
+
+.links {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links.loaded a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.links.loaded a:nth-child(1) {
+    transition-delay: 0.2s;
+}
+.links.loaded a:nth-child(2) {
+    transition-delay: 0.3s;
+}
+.links.loaded a:nth-child(3) {
+    transition-delay: 0.4s;
+}
+.links.loaded a:nth-child(4) {
+    transition-delay: 0.5s;
+}
+.links.loaded a:nth-child(5) {
+    transition-delay: 0.6s;
+}
+
+.links a {
+    opacity: 0;
+    transform: translateY(70px); /* Move slightly down */
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    position: relative;
+    transition: opacity 0s ease, transform 0.6s ease-in-out, font-size 0.6s ease-in-out; /* Transition for scaling effect */
+}
+
+.links a:hover {
+    color: #6A0DAD;
+    cursor: pointer;
+    transform: scale(1.2); /* Use scaling effect for hover */
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.myName:hover {
+    transform: scale(1.1); /* Scale without affecting layout */
+    cursor: default;
+}
+
+/* Mobile Responsiveness */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+}
+
+.hamburger {
+    transition: transform 1s ease-in-out, font-weight 1s ease-in-out; /* Apply transition for both properties */
+}
+
+.hamburger:hover {
+    transform: scale(1.1); /* Apply the scaling effect */
+    font-weight: bold;     /* Bold font weight on hover */
+}
+
+.links a.active {
+    color: #6A0DAD;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* For smaller screens */
+@media (max-width: 820px) {
+    .navbar {
+        justify-content: space-around;
+    }
+
+    .links {
+        width: 100%;  /* Adjust links width for smaller screens */
+        display: none; /* Hide the links by default */
+        position: fixed;
+        top: 10vh;
+        left: 0;
+        background-color: rgb(45, 42, 42);
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        z-index: 1000;
+    }
+
+    .links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .links a {
+        font-size: 1.5rem;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+.main-hero {
+    background-color: rgb(15, 14, 14);
+    height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.content {
+    height: 60vh;
+    width: 50vw;
+}
+
+.content span {
+    font-weight: bold;
+    color: #6A0DAD;
+    text-shadow: 3px 3px 10px #D8B9FF;
+    -webkit-text-stroke: 0.4px rgb(66, 13, 66);
+}
+
+.skill-container {
+    border-right: 2px solid white;
+}
+
+big {
+    line-height: 1.2;
+    color: antiquewhite;
+}
+
+.accounts {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 4rem;
+    padding: 0.6rem;
+}
+
+.accounts a {
+    color: #9F00FF;
+    transition: color 0.2s ease;
+}
+
+/* Style the social media divs (not just icons inside them) */
+.linkedin, .instagram, .github, .facebook {
+    height: 3rem;
+    width: 3rem;
+    border: 1.5px solid #9F00FF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease; /* Smooth transition */
+}
+
+/* Icons inside the divs */
+.linkedin i, .instagram i, .github i, .facebook i {
+    font-size: 1.5rem;
+    transition: all 0.2s ease; /* Smooth transition */
+}
+
+/* Hover effect */
+.linkedin:hover, .instagram:hover, .github:hover, .facebook:hover {
+    background-color: #9F00FF; /* Swap background */
+    transform: scale(1.12); /* Slightly increase size */
+}
+
+.linkedin:hover i, .instagram:hover i, .github:hover i, .facebook:hover i {
+    color: rgb(15, 14, 14); /* Change icon color */
+}
+
+.buttons {
+    height: 4.2rem;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#hire, #contact {
+    position: relative;
+    font-weight: bold;
+    height: 3rem;
+    width: 42%;
+    font-size: 1.2rem;
+    border: 2px solid #6A0DAD;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(106, 13, 173, 0.6); /* Blurry glow effect */
+}
+
+/* Independent background gradients */
+#contact {
+    background: linear-gradient(to right, #6A0DAD 50%, rgb(15, 14, 14) 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: #6A0DAD;
+    transition: background-position 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#hire {
+    background: linear-gradient(to right, rgb(15, 14, 14) 50%, #6A0DAD 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    color: rgb(15, 14, 14);
+    transition: background-position 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Apply independent hover effects */
+#contact:hover {
+    color: rgb(15, 14, 14);
+    background-position: left bottom; /* Only #hire changes */
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+#hire:hover {
+    color: #6A0DAD;
+    background-position: left bottom; /* Only #contact changes */
+    transform: scale(1.08);
+    cursor: pointer;
+}
+
+.image {
+    height: 350px;
+    width: 350px;
+    border: 4px solid #6A0DAD;
+    border-radius: 50%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVfjbrq53x7jdVzNdD83HWB0fgO1sQJu_mAw&s");
+    background-size: cover;
+    transition: transform 2s ease-in-out, box-shadow 2s ease-in-out; /* Smooth transition */
+    box-shadow: 0 0 25px 15px rgba(106, 13, 173, 0.8); /* Blurry glow effect */
+    transform: translateX(100vw);
+} 
+
+/* When the page loads, bring it to the correct position */
+.image.loaded {
+    transform: translateX(0);
+}
+
+/* Hover Effect */
+.image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 45px 15px rgba(106, 13, 173, 0.8); /* Blurry glow effect */
+}
+
+.content big {
+    max-width: 100%;
+    word-wrap: break-word;
+    display: inline-block;
+    transform: rotateX(0deg);
+    transition: transform 2s ease-in-out;
+    opacity: 0;
+}
+
+@keyframes fadeText {
+    0% { 
+        visibility: hidden;
+        opacity: 0; }
+    100% { 
+        visibility: inherit;
+        opacity: 1; }
+}
+
+.content.loaded big {
+    opacity: 1;
+    transform: rotateX(360deg);
+    animation: fadeText 2s ease-in-out;
+}
+
+@media ((max-width: 400px) and (max-height: 700px)) {
+    .content big {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .image {
+        display: block;
+        height: 250px;
+        width: 250px;
+        margin: 70px;
+    }
+    .content {
+        display: block;
+    }
+    .main-hero {
+        flex-wrap: wrap;
+        padding-top: 30px;
+    }
+    .accounts {
+        width: 80%;
+        justify-content: space-around;
+        margin-left: 10%;
+        flex-wrap: wrap;
+    }
+    .accounts a {
+        margin: 5px;
+    }
+    .linkedin, .instagram, .github, .facebook {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+    .main-hero {
+        flex-direction: column-reverse;
+        height: auto;
+        text-align: center;
+    }
+    .content {
+        width: 90vw;
+    }
+    .buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+    .buttons button {
+        width: 70%;
+        margin-bottom: 10px;
+    }
+}
+
+#body2 {
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.timeline-section {
+    text-align: center;
+    width: 80%;
+    padding-top: 50px;
+}
+
+.title {
+    color: #6A0DAD;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.title span {
+    color: white;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: #6A0DAD;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.timeline-item.left {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.timeline-item.right {
+    justify-content: flex-end;
+    text-align: left;
+}
+
+.timeline-item .timeline-content {
+    background: #222;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #6A0DAD;
+    width: 45%;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.timeline-item .timeline-content:hover {
+    box-shadow: 0 0 20px #6A0DAD, 0 0 40px #6A0DAD;
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: #6A0DAD;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px #6A0DAD, 0 0 20px #6A0DAD;
+}
+
+.timeline-item.left .timeline-dot {
+    left: 48%;
+}
+
+.timeline-item.right .timeline-dot {
+    left: 52%;
+}
+
+.timeline-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.timeline-content .year {
+    font-size: 1.2em;
+    color: #6A0DAD;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.timeline-content {
+    transition: transform 0.6s ease-in-out !important;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 20px;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .timeline-item .timeline-content {
+        width: 80%;
+        margin-left: 40px;
+    }
+
+    .timeline-item.left .timeline-dot,
+    .timeline-item.right .timeline-dot {
+        left: 20px;
+    }
+}
+
+#body3 {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+}
+.skills {
+    max-width: 1000px;
+    margin: auto;
+}
+.title {
+    margin-top: 8%;
+    font-size: 2rem;
+    color: #6A0DAD;
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+.head {
+    margin-bottom: 7%;
+}
+.technical-skills, .professional-skills {
+    width: 45%;
+}
+.skill {
+    margin-bottom: 5%; /* Increased spacing */
+}
+.skill p {
+    margin-top: 2%;
+    text-align: center;
+    font-weight: bold;
+}
+.progress {
+    background-color: #333;
+    border-radius: 10px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+.progress-bar {
+    background-color: #6A0DAD;
+    height: 100%;
+    width: 0;
+    transition: width 2s ease-in-out;
+}
+.circular-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10%;
+    justify-content: center;
+}
+.circular-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.circular-skill {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* background-color: conic-gradient(cyan 0%, #333 0%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    /* transition: background-color 2s ease-in-out; */
+}
+.circular-wrapper p {
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .container {
+    display: block;
+    }
+    .technical-skills, .professional-skills {
+        width: 100%;
+    }
+    .circular-skill {
+        height: 30px;
+        width: 30px;
+    }
+    .circular-container {
+        /* display: flex; */
+        gap: 5%;
+    }
+    .professional-skills h3 {
+        margin-top: 20%;
+        margin-bottom: 10%;
+    }
+    .technical-skills h3 {
+        margin-top: 10%;
+    }
+}
+
+#body4 {
+    background-color: #281d37;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+}
+.projects-section {
+    padding: 50px;
+}
+h2 {
+    font-size: 2rem;
+    color: #6A0DAD;
+}
+.filter-buttons {
+    margin: 20px 0;
+}
+.filter-btn {
+    color: white;
+    background-color: #6A0DAD;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: 0.3s;
+    transition: transform 0.5s ease-in-out;
+}
+.filter-btn:hover {
+    background-color: #480875;
+    transform: scale(1.1);
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 30px;
+}
+.project-card {
+    position: relative;
+    background: #322b39;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #6A0DAD;
+    width: 300px;
+    height: 200px;
+}
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+.project-overlay {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 234, 255, 0.5);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: bottom 0.4s ease-in-out;
+}
+.project-card:hover .project-overlay {
+    bottom: 0;
+}
+.github-icon {
+    margin-top: 10px;
+    font-size: 2rem;
+    color: black;
+}
+
+#body5 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a1a1a, #333);
+    font-family: 'Poppins', sans-serif;
+}
+.contact-section {
+    margin-top: 50px;
+    width: 85%;
+    max-width: 550px;
+    padding: 40px;
+    background: rgba(50, 0, 75, 0.9);
+    border-radius: 15px;
+    box-shadow: 0px 0px 25px rgba(128, 0, 128, 0.8);
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+.contact-section:hover {
+    box-shadow: 0px 0px 40px rgba(155, 48, 255, 1);
+}
+h2 {
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.input-box {
+    margin: 15px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+input, textarea {
+    width: 95%;
+    padding: 12px;
+    background: #222;
+    border: 2px solid transparent;
+    outline: none;
+    color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+textarea {
+    height: 100px;
+    resize: none;
+}
+input:focus, textarea:focus {
+    border-color: #9b30ff;
+    box-shadow: 0px 0px 15px rgba(155, 48, 255, 0.7);
+}
+.submit-btn {
+    width: 95%;
+    padding: 12px;
+    background: linear-gradient(135deg, #800080, #9b30ff);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0px 4px 15px rgba(128, 0, 128, 0.5);
+}
+.submit-btn:hover {
+    background: linear-gradient(135deg, #9b30ff, #800080);
+    box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+}
+@media (max-width: 768px) {
+    .contact-section {
+        width: 80%;
+        padding: 25px;
+    }
+    input, textarea, .submit-btn {
+        width: 100%;
+        max-width: none;
+    }
+}
