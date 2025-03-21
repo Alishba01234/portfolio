@@ -314,15 +314,21 @@ big {
     animation: fadeText 2s ease-in-out;
 }
 
-@media ((max-width: 400px) and (max-height: 700px)) {
+@media ((max-width: 550px) and (max-height: 920px)) {
     .content big {
         font-size: 10px;
     }
 }
 
-@media (max-width: 1200px) {
+@media ((max-width: 1100px) and (max-height: 1400px)) {
     .image {
-        display: block;
+        margin-top: 150px !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .image {
+        display: inline-block;
         height: 250px;
         width: 250px;
         margin: 70px;
@@ -579,12 +585,15 @@ big {
 .circular-wrapper p {
     margin-top: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 915px) {
     .container {
     display: block;
     }
     .technical-skills, .professional-skills {
         width: 100%;
+    }
+    .skill {
+        margin-bottom: 1%;
     }
     .circular-skill {
         height: 30px;
@@ -592,13 +601,9 @@ big {
     }
     .circular-container {
         /* display: flex; */
-        gap: 5%;
+        gap: 4%;
     }
     .professional-skills h3 {
-        margin-top: 20%;
-        margin-bottom: 10%;
-    }
-    .technical-skills h3 {
         margin-top: 10%;
     }
 }
